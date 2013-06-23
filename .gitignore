@@ -18,3 +18,9 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+.idea/
+Read.iml
+ant.properties
+build.xml
+proguard-project.txt
+project.properties
