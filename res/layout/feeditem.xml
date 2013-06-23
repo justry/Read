@@ -10,6 +10,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/feedtitle"
             android:textSize="20sp"/>
-    <TextView />
 
 </LinearLayout>
