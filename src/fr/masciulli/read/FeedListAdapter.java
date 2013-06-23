@@ -16,14 +16,12 @@ public class FeedListAdapter extends BaseAdapter {
 
     protected final LayoutInflater mLayoutInflater;
     private final Resources mResources;
-    private List<FeedItem> mFeedItems = new ArrayList<FeedItem>();
+    private List<FeedItem> mFeedItems;
 
     public FeedListAdapter(Context context) {
         mLayoutInflater = LayoutInflater.from(context);
         mResources = context.getResources();
-        for (int i = 0; i < 80; i++) {
-            mFeedItems.add(new FeedItem("Titre de mon feed dynamique", i));
-        }
+        mFeedItems = FeedItemProvider.getItems();
         notifyDataSetChanged();
     }
 
