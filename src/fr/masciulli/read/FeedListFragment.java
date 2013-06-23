@@ -2,9 +2,7 @@ package fr.masciulli.read;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -24,4 +22,5 @@ public class FeedListFragment extends Fragment {
 
         return rootView;
     }
+
 }
