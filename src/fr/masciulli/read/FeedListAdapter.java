@@ -18,7 +18,9 @@ public class FeedListAdapter extends BaseAdapter {
 
     public FeedListAdapter(Context context) {
         mLayoutInflater = LayoutInflater.from(context);
-        mFeedItems.add(new FeedItem("Titre de mon feed dynamique"));
+        for (int i = 0; i < 80; i++) {
+            mFeedItems.add(new FeedItem("Titre de mon feed dynamique"));
+        }
         notifyDataSetChanged();
     }
 
