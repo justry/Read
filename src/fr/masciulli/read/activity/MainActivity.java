@@ -63,7 +63,6 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
     public void onItemSelected(FeedItem feedItem) {
         if (mTwoPane) {
             getFragmentManager().beginTransaction()
-                    .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
                     .replace(R.id.articlelistfragmentcontainer, ArticleListFragment.newInstance(feedItem))
                     .commit();
         } else {
