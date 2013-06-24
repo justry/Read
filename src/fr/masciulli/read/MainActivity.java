@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements FeedListFragment.Callbacks {
+    private boolean mTwoPane;
+
     /**
      * Called when the activity is first created.
      */
@@ -14,6 +17,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mTwoPane = getResources().getBoolean(R.bool.two_pane);
     }
 
     @Override
@@ -34,5 +38,16 @@ public class MainActivity extends Activity {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onItemSelected(FeedItem feedItem) {
+        if (mTwoPane) {
+
+        } else {
+            Intent intent = new Intent(this, ArticleListActivity.class);
+            intent.putExtra("feeditem", feedItem);
+            startActivity(intent);
+        }
     }
 }

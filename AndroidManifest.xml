@@ -25,5 +25,8 @@
                 android:name=".AboutActivity"
                 android:label="@string/aboutactivity">
         </activity>
+        <activity
+                android:name=".ArticleListActivity">
+        </activity>
     </application>
 </manifest>
