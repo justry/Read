@@ -19,9 +19,15 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
         setContentView(R.layout.activity_main);
         mTwoPane = getResources().getBoolean(R.bool.two_pane);
 
-        if (mTwoPane && savedInstanceState == null) {
+
+
+        if (savedInstanceState == null) {
+            if(mTwoPane) {
+                getFragmentManager().beginTransaction()
+                        .add(R.id.articlelistfragmentcontainer, new DefaultDetailFragment()).commit();
+            }
             getFragmentManager().beginTransaction()
-                    .add(R.id.articlelistfragmentcontainer, new DefaultDetailFragment()).commit();
+                    .add(R.id.feedlistfragmentcontainer, FeedListFragment.newInstance(mTwoPane)).commit();
         }
     }
 

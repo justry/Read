@@ -19,6 +19,7 @@ public class FeedListFragment extends Fragment implements AdapterView.OnItemClic
         }
     };
     private Callbacks mCallbacks = sDummyCallbacks;
+    private boolean mTwoPane;
 
     @Override
     public void onAttach(Activity activity) {
@@ -35,10 +36,16 @@ public class FeedListFragment extends Fragment implements AdapterView.OnItemClic
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_feedlist, container, false);
 
+        mTwoPane = getArguments().getBoolean("twoPane");
+
         mFeedListView = (ListView) rootView.findViewById(R.id.feedlist);
         mFeedListView.setOnItemClickListener(this);
         mFeedListAdapter = new FeedListAdapter(getActivity());
         mFeedListView.setAdapter(mFeedListAdapter);
+
+        if(mTwoPane) {
+            mFeedListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        }
 
 
         return rootView;
@@ -52,6 +59,14 @@ public class FeedListFragment extends Fragment implements AdapterView.OnItemClic
         if (item != null) {
             mCallbacks.onItemSelected(item);
         }
+    }
+
+    public static Fragment newInstance(boolean twoPane) {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("twoPane", twoPane);
+        FeedListFragment f = new FeedListFragment();
+        f.setArguments(bundle);
+        return f;
     }
 
     public interface Callbacks {
