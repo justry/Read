@@ -1,12 +1,15 @@
-package fr.masciulli.read;
+package fr.masciulli.read.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import fr.masciulli.read.data.FeedItem;
+import fr.masciulli.read.adapter.FeedListAdapter;
+import fr.masciulli.read.R;
 
 public class FeedListFragment extends Fragment implements AdapterView.OnItemClickListener{
     private ListView mFeedListView;

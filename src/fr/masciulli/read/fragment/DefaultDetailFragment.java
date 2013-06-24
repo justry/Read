@@ -1,10 +1,12 @@
-package fr.masciulli.read;
+package fr.masciulli.read.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import fr.masciulli.read.R;
 
 public class DefaultDetailFragment extends Fragment {
     public DefaultDetailFragment() {

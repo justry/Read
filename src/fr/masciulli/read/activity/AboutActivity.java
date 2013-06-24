@@ -1,7 +1,9 @@
-package fr.masciulli.read;
+package fr.masciulli.read.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import fr.masciulli.read.R;
 
 public class AboutActivity extends Activity {
     @Override

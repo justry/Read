@@ -1,4 +1,4 @@
-package fr.masciulli.read;
+package fr.masciulli.read.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -8,7 +8,7 @@ public class FeedItem implements Parcelable{
 
         @Override
         public FeedItem createFromParcel(Parcel parcel) {
-            return new FeedItem(parcel);
+            return new FeedItem(parcel);  //To change body of implemented methods use File | Settings | File Templates.
         }
 
         @Override

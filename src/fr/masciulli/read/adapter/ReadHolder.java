@@ -1,4 +1,4 @@
-package fr.masciulli.read;
+package fr.masciulli.read.adapter;
 
 import android.util.SparseArray;
 import android.view.View;

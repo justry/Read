@@ -1,4 +1,4 @@
-package fr.masciulli.read;
+package fr.masciulli.read.adapter;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import fr.masciulli.read.data.FeedItem;
+import fr.masciulli.read.R;
+import fr.masciulli.read.data.FeedItemProvider;
 
 public class FeedListAdapter extends BaseAdapter {
 

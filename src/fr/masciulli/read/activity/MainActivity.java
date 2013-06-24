@@ -1,11 +1,16 @@
-package fr.masciulli.read;
+package fr.masciulli.read.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import fr.masciulli.read.data.FeedItem;
+import fr.masciulli.read.R;
+import fr.masciulli.read.fragment.ArticleListFragment;
+import fr.masciulli.read.fragment.DefaultDetailFragment;
+import fr.masciulli.read.fragment.FeedListFragment;
 
 public class MainActivity extends Activity implements FeedListFragment.Callbacks {
     private boolean mTwoPane;

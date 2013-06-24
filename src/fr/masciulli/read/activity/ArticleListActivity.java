@@ -1,7 +1,11 @@
-package fr.masciulli.read;
+package fr.masciulli.read.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import fr.masciulli.read.fragment.ArticleListFragment;
+import fr.masciulli.read.data.FeedItem;
+import fr.masciulli.read.R;
 
 public class ArticleListActivity extends Activity {
     private FeedItem mFeedItem;
