@@ -17,7 +17,6 @@ public class ArticleListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         mFeedItem = (FeedItem)getArguments().getParcelable("item");
-        Toast.makeText(getActivity(), mFeedItem.getTitle(), Toast.LENGTH_SHORT).show();
         return inflater.inflate(R.layout.fragment_articlelist, container, false);
     }
 
