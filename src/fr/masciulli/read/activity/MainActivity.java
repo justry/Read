@@ -29,10 +29,12 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
         if (savedInstanceState == null) {
             if(mTwoPane) {
                 getFragmentManager().beginTransaction()
-                        .add(R.id.articlelistfragmentcontainer, new DefaultDetailFragment()).commit();
+                        .add(R.id.articlelistfragmentcontainer, new DefaultDetailFragment())
+                        .commit();
             }
             getFragmentManager().beginTransaction()
-                    .add(R.id.feedlistfragmentcontainer, FeedListFragment.newInstance(mTwoPane)).commit();
+                    .add(R.id.feedlistfragmentcontainer, FeedListFragment.newInstance(mTwoPane))
+                    .commit();
         }
     }
 
