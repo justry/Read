@@ -34,7 +34,7 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
                 break;
 
             case R.id.settings:
-
+                // TODO implement settings Activity
                 break;
         }
         return true;
