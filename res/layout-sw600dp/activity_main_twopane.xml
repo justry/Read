@@ -4,16 +4,20 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:baselineAligned="false">
-    <fragment android:name="fr.masciulli.read.FeedListFragment"
-              android:id="@+id/feedlistfragment"
-              android:layout_weight="1"
-              android:layout_width="0dp"
-              android:layout_height="match_parent" />
-    <fragment android:name="fr.masciulli.read.ArticleListFragment"
-              android:id="@+id/articlelistfragment"
-              android:layout_weight="2"
-              android:layout_width="0dp"
-              android:layout_height="match_parent" />
+
+    <fragment
+            android:name="fr.masciulli.read.FeedListFragment"
+            android:id="@+id/feedlistfragment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    <FrameLayout
+            android:id="@+id/articlelistfragmentcontainer"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
 
 </LinearLayout>
 
