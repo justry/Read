@@ -3,13 +3,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="16dp"
               android:minHeight="120dp">
     <TextView
             android:id="@+id/articletitle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="22sp"
+            />
+    <TextView
+            android:id="@+id/articleauthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            />
+    <TextView
+            android:id="@+id/articledate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            />
+    <TextView
+            android:id="@+id/articlecontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
             />
 
 </LinearLayout>

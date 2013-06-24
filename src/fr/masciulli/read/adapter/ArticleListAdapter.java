@@ -10,8 +10,7 @@ import android.widget.TextView;
 import fr.masciulli.read.R;
 import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.ArticleItemProvider;
-import fr.masciulli.read.data.FeedItem;
-import fr.masciulli.read.data.FeedItemProvider;
+import fr.masciulli.read.util.DateUtils;
 
 import java.util.List;
 
@@ -49,10 +48,16 @@ public class ArticleListAdapter extends BaseAdapter{
         }
 
         final TextView titleView = ReadHolder.get(convertView, R.id.articletitle);
+        final TextView authorView = ReadHolder.get(convertView, R.id.articleauthor);
+        final TextView dateView = ReadHolder.get(convertView, R.id.articledate);
+        final TextView contentView = ReadHolder.get(convertView, R.id.articlecontent);
 
         final ArticleItem articleItem = getItem(position);
 
         titleView.setText(articleItem.getTitle());
+        authorView.setText(articleItem.getAuthor());
+        dateView.setText(DateUtils.getFormattedDate(articleItem.getDate()));
+        contentView.setText(articleItem.getContent());
 
         return convertView;
     }

@@ -6,10 +6,13 @@ public class ArticleItem {
     private String mTitle;
     private String mAuthor;
     private DateTime mDate;
-    private String content;
+    private String mContent;
 
     public ArticleItem(String title, String author, DateTime date, String content) {
         mTitle = title;
+        mAuthor = author;
+        mDate = date;
+        mContent = content;
     }
 
     public ArticleItem() {
@@ -25,11 +28,11 @@ public class ArticleItem {
     }
 
     public String getContent() {
-        return content;
+        return mContent;
     }
 
     public void setContent(String content) {
-        this.content = content;
+        this.mContent = content;
     }
 
     public String getAuthor() {
