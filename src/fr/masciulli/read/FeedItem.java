@@ -8,7 +8,7 @@ public class FeedItem implements Parcelable{
 
         @Override
         public FeedItem createFromParcel(Parcel parcel) {
-            return new FeedItem(parcel);  //To change body of implemented methods use File | Settings | File Templates.
+            return new FeedItem(parcel);
         }
 
         @Override
