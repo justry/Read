@@ -52,6 +52,7 @@ public class FeedListAdapter extends BaseAdapter {
         final FeedItem feedItem = getItem(position);
 
         titleView.setText(feedItem.getTitle());
+        if(feedItem.getUnreadItems() != 0) titleView.setTypeface(titleView.getTypeface(), 1);
         unreadItemsView.setText(String.format(mResources.getString(R.string.unreaditemscount),feedItem.getUnreadItems()));
 
         return convertView;
