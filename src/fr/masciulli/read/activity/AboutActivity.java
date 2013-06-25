@@ -22,7 +22,7 @@ public class AboutActivity extends Activity {
     }
 
     public void contact(View v) {
-        final Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:uvweb@assos.utc.fr"));
+        final Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:alexandre.masciulli@gmail.com"));
         startActivity(Intent.createChooser(sendIntent, getResources().getString(R.string.intent_chooser_title)));
     }
 
