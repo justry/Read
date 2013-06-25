@@ -9,4 +9,7 @@
     <string name="account_title">AOL account</string>
     <string name="account_summary">E-mail associated with you AOL account</string>
     <string name="settingsactivity">Settings</string>
+    <string name="credits">Alexandre Masciulli</string>
+    <string name="intent_chooser_title">Contact</string>
+    <string name="contact">Contact</string>
 </resources>
