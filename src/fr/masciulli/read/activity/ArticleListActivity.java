@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+
 import fr.masciulli.read.fragment.ArticleListFragment;
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.R;

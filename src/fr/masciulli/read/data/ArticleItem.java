@@ -1,13 +1,29 @@
 package fr.masciulli.read.data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.joda.time.DateTime;
 
-public class ArticleItem {
+public class ArticleItem implements Parcelable {
     private String mTitle;
     private String mAuthor;
     private DateTime mDate;
     private String mContent;
     private boolean mRead;
+
+    public static final Creator<ArticleItem> CREATOR = new Creator<ArticleItem>() {
+
+        @Override
+        public ArticleItem createFromParcel(Parcel parcel) {
+            return new ArticleItem(parcel);
+        }
+
+        @Override
+        public ArticleItem[] newArray(int i) {
+            return new ArticleItem[0];
+        }
+    };
 
     public ArticleItem(String title, String author, DateTime date, String content, boolean read) {
         mTitle = title;
@@ -19,6 +35,14 @@ public class ArticleItem {
 
     public ArticleItem() {
 
+    }
+
+    public ArticleItem(Parcel parcel) {
+        mTitle = parcel.readString();
+        mAuthor = parcel.readString();
+        mDate = new DateTime(parcel.readLong());
+        mContent = parcel.readString();
+        mRead = parcel.readInt() > 0;
     }
 
     public String getTitle() {
@@ -59,5 +83,19 @@ public class ArticleItem {
 
     public void setRead(boolean read) {
         mRead = read;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mTitle);
+        parcel.writeString(mAuthor);
+        parcel.writeLong(mDate.getMillis());
+        parcel.writeString(mContent);
+        parcel.writeInt(mRead ? 1 : 0);
     }
 }

@@ -1,16 +1,21 @@
 package fr.masciulli.read.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import android.widget.Toast;
+
+import fr.masciulli.read.activity.ArticleDetailActivity;
 import fr.masciulli.read.adapter.ArticleListAdapter;
+import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.R;
 
-public class ArticleListFragment extends Fragment {
+public class ArticleListFragment extends Fragment implements AdapterView.OnItemClickListener{
     private FeedItem mFeedItem;
     private ListView mArticleListView;
     private ArticleListAdapter mArticleListAdapter;
@@ -27,6 +32,8 @@ public class ArticleListFragment extends Fragment {
         mArticleListAdapter = new ArticleListAdapter(getActivity(), mFeedItem);
         mArticleListView.setAdapter(mArticleListAdapter);
 
+        mArticleListView.setOnItemClickListener(this);
+
         setHasOptionsMenu(true);
 
         return rootView;
@@ -38,6 +45,18 @@ public class ArticleListFragment extends Fragment {
         ArticleListFragment f = new ArticleListFragment();
         f.setArguments(bundle);
         return f;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        // Notify the active callbacks interface (the activity, if the
+        // fragment is attached to one) that an item has been selected.
+        ArticleItem item = mArticleListAdapter.getItem(position);
+        if (item != null) {
+            Intent intent = new Intent(getActivity(), ArticleDetailActivity.class);
+            intent.putExtra("articleitem", item);
+            getActivity().startActivity(intent);
+        }
     }
 
     @Override
