@@ -2,6 +2,7 @@ package fr.masciulli.read.adapter;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,11 +56,11 @@ public class FeedListAdapter extends BaseAdapter {
 
         titleView.setText(feedItem.getTitle());
 
-        int typefaceStyle = feedItem.getUnreadItems() == 0 ? 0 : 1;
+        int typefaceStyle = feedItem.getUnreadItems() == 0 ? Typeface.NORMAL : Typeface.BOLD;
         int textColorRes = feedItem.getUnreadItems() == 0 ? R.color.read : android.R.color.black;
         int textColor = mResources.getColor(textColorRes);
 
-        titleView.setTypeface(titleView.getTypeface(), typefaceStyle);
+        titleView.setTypeface(null, typefaceStyle);
         titleView.setTextColor(textColor);
         unreadItemsView.setTextColor(textColor);
 
