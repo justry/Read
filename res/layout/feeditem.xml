@@ -14,6 +14,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/feedtitle"
             android:textSize="18sp"
+            android:textColor="@color/read"
             />
     <TextView
             android:layout_width="0dp"
@@ -21,6 +22,7 @@
             android:id="@+id/feedunreaditems"
             android:layout_weight="1"
             android:gravity="right"
+            android:textColor="@color/read"
             />
 
 </LinearLayout>
