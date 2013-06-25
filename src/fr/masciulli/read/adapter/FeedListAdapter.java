@@ -54,13 +54,14 @@ public class FeedListAdapter extends BaseAdapter {
         final FeedItem feedItem = getItem(position);
 
         titleView.setText(feedItem.getTitle());
-        if(feedItem.getUnreadItems() != 0) {
-            titleView.setTypeface(titleView.getTypeface(), 1);
 
-            int unreadColor = mResources.getColor(android.R.color.black);
-            titleView.setTextColor(unreadColor);
-            unreadItemsView.setTextColor(unreadColor);
-        }
+        int typefaceStyle = feedItem.getUnreadItems() == 0 ? 0 : 1;
+        int textColorRes = feedItem.getUnreadItems() == 0 ? R.color.read : android.R.color.black;
+        int textColor = mResources.getColor(textColorRes);
+
+        titleView.setTypeface(titleView.getTypeface(), typefaceStyle);
+        titleView.setTextColor(textColor);
+        unreadItemsView.setTextColor(textColor);
 
         unreadItemsView.setText(String.format(mResources.getString(R.string.unreaditemscount),feedItem.getUnreadItems()));
 
