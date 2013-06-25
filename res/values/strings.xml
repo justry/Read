@@ -5,4 +5,5 @@
     <string name="settingsmenu">Settings</string>
     <string name="aboutmenu">About Read</string>
     <string name="aboutactivity">About Read</string>
+    <string name="refresh">Refresh</string>
 </resources>

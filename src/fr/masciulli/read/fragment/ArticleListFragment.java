@@ -2,9 +2,7 @@ package fr.masciulli.read.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.ListView;
 
 import fr.masciulli.read.adapter.ArticleListAdapter;
@@ -15,6 +13,7 @@ public class ArticleListFragment extends Fragment {
     private FeedItem mFeedItem;
     private ListView mArticleListView;
     private ArticleListAdapter mArticleListAdapter;
+    private MenuItem mRefreshMenuItem;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -26,6 +25,9 @@ public class ArticleListFragment extends Fragment {
         mArticleListView = (ListView) rootView.findViewById(R.id.articlelist);
         mArticleListAdapter = new ArticleListAdapter(getActivity(), mFeedItem);
         mArticleListView.setAdapter(mArticleListAdapter);
+
+        setHasOptionsMenu(true);
+
         return rootView;
     }
 
@@ -35,5 +37,12 @@ public class ArticleListFragment extends Fragment {
         ArticleListFragment f = new ArticleListFragment();
         f.setArguments(bundle);
         return f;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.detail, menu);
+        mRefreshMenuItem = menu.findItem(R.id.menu_refresh_uvdetail);
     }
 }
