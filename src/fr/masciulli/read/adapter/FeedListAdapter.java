@@ -64,7 +64,7 @@ public class FeedListAdapter extends BaseAdapter {
         titleView.setTextColor(textColor);
         unreadItemsView.setTextColor(textColor);
 
-        unreadItemsView.setText(String.format(mResources.getString(R.string.unreaditemscount),feedItem.getUnreadItems()));
+        unreadItemsView.setText(String.format(mResources.getString(R.string.unreaditemscount), feedItem.getUnreadItems()));
 
         return convertView;
     }
