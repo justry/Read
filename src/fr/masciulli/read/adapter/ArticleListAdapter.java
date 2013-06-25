@@ -60,6 +60,17 @@ public class ArticleListAdapter extends BaseAdapter{
         dateView.setText(DateUtils.getFormattedDate(articleItem.getDate()));
         contentView.setText(articleItem.getContent());
 
+        int typefaceStyle = articleItem.isRead() ? 0 : 1;
+        int textColorRes = articleItem.isRead() ? R.color.read : android.R.color.black;
+        int textColor = mResources.getColor(textColorRes);
+
+        titleView.setTypeface(titleView.getTypeface(), typefaceStyle);
+
+        titleView.setTextColor(textColor);
+        authorView.setTextColor(textColor);
+        contentView.setTextColor(textColor);
+        dateView.setTextColor(textColor);
+
         return convertView;
     }
 }

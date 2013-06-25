@@ -11,18 +11,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
+            android:textColor="@color/read"
             />
     <TextView
             android:id="@+id/articleauthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:textColor="@color/read"
             />
     <TextView
             android:id="@+id/articledate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:textColor="@color/read"
             />
     <TextView
             android:id="@+id/articlecontent"
@@ -31,6 +34,7 @@
             android:textSize="14sp"
             android:maxLines="3"
             android:ellipsize="end"
+            android:textColor="@color/read"
             />
 
 </LinearLayout>
