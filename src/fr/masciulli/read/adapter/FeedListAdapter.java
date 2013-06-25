@@ -57,7 +57,7 @@ public class FeedListAdapter extends BaseAdapter {
         titleView.setText(feedItem.getTitle());
 
         int typefaceStyle = feedItem.getUnreadItems() == 0 ? Typeface.NORMAL : Typeface.BOLD;
-        int textColorRes = feedItem.getUnreadItems() == 0 ? R.color.read : android.R.color.black;
+        int textColorRes = feedItem.getUnreadItems() == 0 ? R.color.read : R.color.unread;
         int textColor = mResources.getColor(textColorRes);
 
         titleView.setTypeface(null, typefaceStyle);

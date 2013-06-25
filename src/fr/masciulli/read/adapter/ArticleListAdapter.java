@@ -62,7 +62,7 @@ public class ArticleListAdapter extends BaseAdapter {
         contentView.setText(articleItem.getContent());
 
         int typefaceStyle = articleItem.isRead() ? Typeface.NORMAL : Typeface.BOLD;
-        int textColorRes = articleItem.isRead() ? R.color.read : android.R.color.black;
+        int textColorRes = articleItem.isRead() ? R.color.read : R.color.unread;
         int textColor = mResources.getColor(textColorRes);
 
         titleView.setTypeface(null, typefaceStyle);

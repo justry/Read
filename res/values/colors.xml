@@ -3,4 +3,5 @@
     <color name="white">#FFFFFF</color>
     <color name="main">#362F7F</color>
     <color name="read">#666666</color>
+    <color name="unread">#333333</color>
 </resources>
