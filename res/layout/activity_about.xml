@@ -29,7 +29,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/contact"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:onClick="contact"/>
 
         <ImageView
