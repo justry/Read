@@ -16,7 +16,7 @@ import fr.masciulli.read.util.DateUtils;
 
 import java.util.List;
 
-public class ArticleListAdapter extends BaseAdapter{
+public class ArticleListAdapter extends BaseAdapter {
     protected final LayoutInflater mLayoutInflater;
     private final Resources mResources;
     private List<ArticleItem> mArticleItems;
