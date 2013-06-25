@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.ListView;
 
+import android.widget.Toast;
 import fr.masciulli.read.adapter.ArticleListAdapter;
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.R;
@@ -44,5 +45,16 @@ public class ArticleListFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.detail, menu);
         mRefreshMenuItem = menu.findItem(R.id.menu_refresh_uvdetail);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh_uvdetail:
+                Toast.makeText(getActivity(), "Refreshing...", Toast.LENGTH_LONG).show();
+                return true;
+        }
+
+        return false;
     }
 }
