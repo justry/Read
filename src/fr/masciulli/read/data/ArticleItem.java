@@ -7,12 +7,14 @@ public class ArticleItem {
     private String mAuthor;
     private DateTime mDate;
     private String mContent;
+    private boolean mRead;
 
-    public ArticleItem(String title, String author, DateTime date, String content) {
+    public ArticleItem(String title, String author, DateTime date, String content, boolean read) {
         mTitle = title;
         mAuthor = author;
         mDate = date;
         mContent = content;
+        mRead = read;
     }
 
     public ArticleItem() {
@@ -49,5 +51,13 @@ public class ArticleItem {
 
     public void setDate(DateTime date) {
         this.mDate = date;
+    }
+
+    public boolean isRead() {
+        return mRead;
+    }
+
+    public void setRead(boolean read) {
+        mRead = read;
     }
 }
