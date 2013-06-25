@@ -24,7 +24,7 @@ public class ArticleListFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_articlelist, container, false);
 
         mArticleListView = (ListView) rootView.findViewById(R.id.articlelist);
-        mArticleListAdapter = new ArticleListAdapter(getActivity());
+        mArticleListAdapter = new ArticleListAdapter(getActivity(), mFeedItem);
         mArticleListView.setAdapter(mArticleListAdapter);
         return rootView;
     }

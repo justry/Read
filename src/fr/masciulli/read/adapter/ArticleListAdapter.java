@@ -10,6 +10,7 @@ import android.widget.TextView;
 import fr.masciulli.read.R;
 import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.ArticleItemProvider;
+import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.util.DateUtils;
 
 import java.util.List;
@@ -19,10 +20,10 @@ public class ArticleListAdapter extends BaseAdapter{
     private final Resources mResources;
     private List<ArticleItem> mArticleItems;
 
-    public ArticleListAdapter(Context context) {
+    public ArticleListAdapter(Context context, FeedItem feedItem) {
         mLayoutInflater = LayoutInflater.from(context);
         mResources = context.getResources();
-        mArticleItems = ArticleItemProvider.getItems();
+        mArticleItems = ArticleItemProvider.getItems(feedItem);
         notifyDataSetChanged();
     }
 
