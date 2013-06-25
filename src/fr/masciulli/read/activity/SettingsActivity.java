@@ -3,6 +3,7 @@ package fr.masciulli.read.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import fr.masciulli.read.fragment.SettingsFragment;
 
 public class SettingsActivity extends Activity {
@@ -12,9 +13,11 @@ public class SettingsActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Display the fragment as the main content.
-        getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new SettingsFragment())
-                .commit();
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content, new SettingsFragment())
+                    .commit();
+        }
 
     }
 
