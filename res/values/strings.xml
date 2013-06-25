@@ -6,4 +6,7 @@
     <string name="aboutmenu">About Read</string>
     <string name="aboutactivity">About Read</string>
     <string name="refresh">Refresh</string>
+    <string name="account_title">AOL account</string>
+    <string name="account_summary">E-mail associated with you AOL account</string>
+    <string name="settingsactivity">Settings</string>
 </resources>

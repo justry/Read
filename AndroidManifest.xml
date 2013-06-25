@@ -26,6 +26,10 @@
                 android:label="@string/aboutactivity">
         </activity>
         <activity
+                android:name=".activity.SettingsActivity"
+                android:label="@string/settingsactivity">
+        </activity>
+        <activity
                 android:name=".activity.ArticleListActivity">
         </activity>
     </application>
