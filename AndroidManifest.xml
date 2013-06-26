@@ -32,8 +32,5 @@
         <activity
                 android:name=".activity.ArticleListActivity">
         </activity>
-        <activity
-                android:name=".activity.ArticleDetailActivity">
-        </activity>
     </application>
 </manifest>
