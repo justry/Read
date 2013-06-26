@@ -1,6 +1,7 @@
 package fr.masciulli.read.fragment;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
@@ -21,6 +22,26 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemC
     private ArticleListAdapter mArticleListAdapter;
     private MenuItem mRefreshMenuItem;
 
+    public static Fragment newInstance(FeedItem feedItem) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("item", feedItem);
+        ArticleListFragment f = new ArticleListFragment();
+        f.setArguments(bundle);
+        return f;
+    }
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		if (savedInstanceState == null) {
+			final FragmentManager fm = getFragmentManager();
+			if (fm.findFragmentByTag(ControllerFragment.FRAGMENT_TAG) == null) {
+				fm.beginTransaction().add(new ControllerFragment(), ControllerFragment.FRAGMENT_TAG).commit();
+			}
+		}
+	}
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -37,14 +58,6 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemC
         setHasOptionsMenu(true);
 
         return rootView;
-    }
-
-    public static Fragment newInstance(FeedItem feedItem) {
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("item", feedItem);
-        ArticleListFragment f = new ArticleListFragment();
-        f.setArguments(bundle);
-        return f;
     }
 
     @Override
