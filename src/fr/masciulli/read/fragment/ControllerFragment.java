@@ -47,7 +47,7 @@ public class ControllerFragment extends Fragment {
 	public void onOpenArticle(OpenArticleEvent event) {
 		getFragmentManager().beginTransaction()
 				.setCustomAnimations(R.animator.slide_in, R.animator.slide_out,
-						R.animator.slide_in, R.animator.slide_out)
+						R.animator.slide_in_back, R.animator.slide_out_back)
 				.replace(R.id.articlelistfragmentcontainer, ArticleDetailFragment.newInstance(event.item))
 				.addToBackStack(null)
 				.commit();
