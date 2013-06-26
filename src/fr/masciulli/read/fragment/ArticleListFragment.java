@@ -3,18 +3,22 @@ package fr.masciulli.read.fragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import android.widget.Toast;
 
 import fr.masciulli.read.BusProvider;
 import fr.masciulli.read.OpenArticleEvent;
+import fr.masciulli.read.R;
 import fr.masciulli.read.adapter.ArticleListAdapter;
 import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.FeedItem;
-import fr.masciulli.read.R;
 
 public class ArticleListFragment extends Fragment implements AdapterView.OnItemClickListener {
     private FeedItem mFeedItem;
@@ -30,17 +34,17 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemC
         return f;
     }
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		if (savedInstanceState == null) {
-			final FragmentManager fm = getFragmentManager();
-			if (fm.findFragmentByTag(ControllerFragment.FRAGMENT_TAG) == null) {
-				fm.beginTransaction().add(new ControllerFragment(), ControllerFragment.FRAGMENT_TAG).commit();
-			}
-		}
-	}
+        if (savedInstanceState == null) {
+            final FragmentManager fm = getFragmentManager();
+            if (fm.findFragmentByTag(ControllerFragment.FRAGMENT_TAG) == null) {
+                fm.beginTransaction().add(new ControllerFragment(), ControllerFragment.FRAGMENT_TAG).commit();
+            }
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

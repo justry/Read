@@ -46,7 +46,10 @@ public class ControllerFragment extends Fragment {
 	@SuppressWarnings("unused")
 	public void onOpenArticle(OpenArticleEvent event) {
 		getFragmentManager().beginTransaction()
+				.setCustomAnimations(R.animator.slide_in, R.animator.slide_out,
+						R.animator.slide_in, R.animator.slide_out)
 				.replace(R.id.articlelistfragmentcontainer, ArticleDetailFragment.newInstance(event.item))
+				.addToBackStack(null)
 				.commit();
 
 	}

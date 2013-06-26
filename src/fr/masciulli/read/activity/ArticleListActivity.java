@@ -31,7 +31,9 @@ public class ArticleListActivity extends Activity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                finish();
+                if (!getFragmentManager().popBackStackImmediate()) {
+                    finish();
+                }
                 return true;
         }
         return super.onOptionsItemSelected(item);
