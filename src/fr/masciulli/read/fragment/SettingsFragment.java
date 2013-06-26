@@ -2,6 +2,7 @@ package fr.masciulli.read.fragment;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
 import fr.masciulli.read.R;
 
 public class SettingsFragment extends PreferenceFragment {

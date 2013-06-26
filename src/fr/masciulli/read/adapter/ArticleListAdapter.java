@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import fr.masciulli.read.R;
 import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.ArticleItemProvider;

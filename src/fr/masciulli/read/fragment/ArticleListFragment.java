@@ -15,7 +15,7 @@ import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.R;
 
-public class ArticleListFragment extends Fragment implements AdapterView.OnItemClickListener{
+public class ArticleListFragment extends Fragment implements AdapterView.OnItemClickListener {
     private FeedItem mFeedItem;
     private ListView mArticleListView;
     private ArticleListAdapter mArticleListAdapter;
@@ -24,7 +24,7 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mFeedItem = (FeedItem)getArguments().getParcelable("item");
+        mFeedItem = (FeedItem) getArguments().getParcelable("item");
 
         final View rootView = inflater.inflate(R.layout.fragment_articlelist, container, false);
 
@@ -47,12 +47,14 @@ public class ArticleListFragment extends Fragment implements AdapterView.OnItemC
         return f;
     }
 
-    @Override public void onResume() {
+    @Override
+    public void onResume() {
         super.onResume();
         BusProvider.getInstance().register(this);
     }
 
-    @Override public void onPause() {
+    @Override
+    public void onPause() {
         super.onPause();
         BusProvider.getInstance().unregister(this);
     }
