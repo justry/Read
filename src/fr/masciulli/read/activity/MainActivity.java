@@ -1,6 +1,7 @@
 package fr.masciulli.read.activity;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -61,7 +62,9 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
     @Override
     public void onItemSelected(FeedItem feedItem) {
         if (mTwoPane) {
-            getFragmentManager().beginTransaction()
+            final FragmentManager fm = getFragmentManager();
+            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            fm.beginTransaction()
                     .replace(R.id.articlelistfragmentcontainer, ArticleListFragment.newInstance(feedItem))
                     .commit();
         } else {
