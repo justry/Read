@@ -2,16 +2,20 @@ package fr.masciulli.read.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import de.keyboardsurfer.android.widget.crouton.Crouton;
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.adapter.FeedListAdapter;
 import fr.masciulli.read.R;
+import fr.masciulli.read.io.FeedListTaskFragment;
+import fr.masciulli.read.util.ConnectionUtils;
 
-public class FeedListFragment extends Fragment implements AdapterView.OnItemClickListener{
+public class FeedListFragment extends ReadFragment implements AdapterView.OnItemClickListener{
     private ListView mFeedListView;
     private FeedListAdapter mFeedListAdapter;
 
@@ -42,6 +46,13 @@ public class FeedListFragment extends Fragment implements AdapterView.OnItemClic
         mFeedListView.setOnItemClickListener(this);
         mFeedListAdapter = new FeedListAdapter(getActivity());
         mFeedListView.setAdapter(mFeedListAdapter);
+
+        final Activity activity = getActivity();
+
+        if (!ConnectionUtils.isOnline(activity)) {
+            handleNetworkError(activity);
+        } else {
+        }
 
         return rootView;
     }

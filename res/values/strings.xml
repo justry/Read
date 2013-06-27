@@ -12,4 +12,5 @@
     <string name="credits">Alexandre Masciulli - 2013</string>
     <string name="intent_chooser_title">Contact</string>
     <string name="contact">Contact</string>
+    <string name="network_error_message">No Internet connection</string>
 </resources>
