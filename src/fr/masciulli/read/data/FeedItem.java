@@ -18,8 +18,10 @@ public class FeedItem implements Parcelable{
     };
     private String mTitle;
     private int mUnreadItems;
+    private String mId;
+    private String mUrl;
 
-    public FeedItem(String title, int unreadItems) {
+    public FeedItem(String id, String title, int unreadItems, String url) {
         mTitle = title;
         mUnreadItems = unreadItems;
     }
@@ -50,5 +52,21 @@ public class FeedItem implements Parcelable{
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(mTitle);
         parcel.writeInt(mUnreadItems);
+    }
+
+    public String getmUrl() {
+        return mUrl;
+    }
+
+    public void setmUrl(String mUrl) {
+        this.mUrl = mUrl;
+    }
+
+    public String getmId() {
+        return mId;
+    }
+
+    public void setmId(String mId) {
+        this.mId = mId;
     }
 }
