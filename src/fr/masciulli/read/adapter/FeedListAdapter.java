@@ -3,12 +3,14 @@ package fr.masciulli.read.adapter;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,7 +27,6 @@ public class FeedListAdapter extends BaseAdapter {
     public FeedListAdapter(Context context) {
         mLayoutInflater = LayoutInflater.from(context);
         mResources = context.getResources();
-        notifyDataSetChanged();
     }
 
     public void setFeedItems(List<FeedItem> feedItems) {
@@ -72,5 +73,13 @@ public class FeedListAdapter extends BaseAdapter {
         unreadItemsView.setText(String.format(mResources.getString(R.string.unreaditemscount), feedItem.getUnreadItems()));
 
         return convertView;
+    }
+
+    public boolean hasFeeds() {
+        return !mFeedItems.isEmpty();
+    }
+
+    public List<FeedItem> getFeedItems() {
+        return mFeedItems;
     }
 }
