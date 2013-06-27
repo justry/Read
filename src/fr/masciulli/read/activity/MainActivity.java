@@ -33,7 +33,6 @@ public class MainActivity extends Activity implements FeedListFragment.Callbacks
                         .commit();
             }
             getFragmentManager().beginTransaction()
-                    .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
                     .add(R.id.feedlistfragmentcontainer, new FeedListFragment())
                     .commit();
         }
