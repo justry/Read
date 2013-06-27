@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.Collections;
 import java.util.List;
 
 import fr.masciulli.read.data.FeedItem;
@@ -19,12 +20,16 @@ public class FeedListAdapter extends BaseAdapter {
 
     protected final LayoutInflater mLayoutInflater;
     private final Resources mResources;
-    private List<FeedItem> mFeedItems;
+    private List<FeedItem> mFeedItems = Collections.emptyList();
 
     public FeedListAdapter(Context context) {
         mLayoutInflater = LayoutInflater.from(context);
         mResources = context.getResources();
-        mFeedItems = FeedItemProvider.getItems();
+        notifyDataSetChanged();
+    }
+
+    public void setFeedItems(List<FeedItem> feedItems) {
+        mFeedItems = feedItems;
         notifyDataSetChanged();
     }
 

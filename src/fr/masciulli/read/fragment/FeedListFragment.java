@@ -1,21 +1,22 @@
 package fr.masciulli.read.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import de.keyboardsurfer.android.widget.crouton.Crouton;
+import java.util.List;
+
 import fr.masciulli.read.data.FeedItem;
 import fr.masciulli.read.adapter.FeedListAdapter;
 import fr.masciulli.read.R;
+import fr.masciulli.read.io.BaseTaskFragment;
 import fr.masciulli.read.io.FeedListTaskFragment;
 import fr.masciulli.read.util.ConnectionUtils;
 
-public class FeedListFragment extends ReadFragment implements AdapterView.OnItemClickListener{
+public class FeedListFragment extends ReadFragment implements AdapterView.OnItemClickListener,
+        FeedListTaskFragment.Callbacks<List<FeedItem>>{
     private ListView mFeedListView;
     private FeedListAdapter mFeedListAdapter;
 
@@ -49,9 +50,11 @@ public class FeedListFragment extends ReadFragment implements AdapterView.OnItem
 
         final Activity activity = getActivity();
 
+        final FeedListTaskFragment feedListTaskFragment = FeedListTaskFragment.get(activity.getFragmentManager(), this);
         if (!ConnectionUtils.isOnline(activity)) {
             handleNetworkError(activity);
         } else {
+            feedListTaskFragment.startNewTask();
         }
 
         return rootView;
@@ -65,6 +68,22 @@ public class FeedListFragment extends ReadFragment implements AdapterView.OnItem
         if (item != null) {
             mCallbacks.onItemSelected(item);
         }
+    }
+
+    @Override
+    public void onPreExecute() {
+
+    }
+
+    @Override
+    public void onPostExecute(List<FeedItem> feedItems) {
+        mFeedListAdapter.setFeedItems(feedItems);
+
+    }
+
+    @Override
+    public void onError() {
+
     }
 
     public interface Callbacks {
