@@ -20,7 +20,7 @@ import fr.masciulli.read.adapter.ArticleListAdapter;
 import fr.masciulli.read.data.ArticleItem;
 import fr.masciulli.read.data.FeedItem;
 
-public class ArticleListFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class ArticleListFragment extends ReadFragment implements AdapterView.OnItemClickListener {
     private FeedItem mFeedItem;
     private ListView mArticleListView;
     private ArticleListAdapter mArticleListAdapter;

@@ -12,7 +12,7 @@ import fr.masciulli.read.R;
 import fr.masciulli.read.adapter.ArticleListAdapter;
 import fr.masciulli.read.data.ArticleItem;
 
-public class ArticleDetailFragment extends Fragment {
+public class ArticleDetailFragment extends ReadFragment {
     public static Fragment newInstance(ArticleItem item) {
         Bundle bundle = new Bundle();
         bundle.putParcelable("articleitem", item);
