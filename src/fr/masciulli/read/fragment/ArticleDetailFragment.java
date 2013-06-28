@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import fr.masciulli.read.R;
+import fr.masciulli.read.adapter.ArticleListAdapter;
 import fr.masciulli.read.data.ArticleItem;
 
 public class ArticleDetailFragment extends Fragment {
@@ -20,9 +23,7 @@ public class ArticleDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final String articleTitle = ((ArticleItem) getArguments().getParcelable("articleitem")).getTitle();
-        TextView tv = new TextView(getActivity());
-        tv.setText(articleTitle);
-        return tv;
+        final View rootView = inflater.inflate(R.layout.fragment_articledetail, container, false);
+        return rootView;
     }
 }

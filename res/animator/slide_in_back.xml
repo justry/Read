@@ -2,8 +2,8 @@
 
 <objectAnimator
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:valueFrom="-1000"
+        android:valueFrom="-1"
         android:valueTo="0"
-        android:propertyName="x"
+        android:propertyName="xFraction"
         android:interpolator="@android:interpolator/accelerate_decelerate"
         android:duration="300"/>
