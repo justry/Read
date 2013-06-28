@@ -37,7 +37,7 @@ public class FeedListTaskFragment extends BaseTaskFragment {
 
         @Override
         protected List<FeedItem> doInBackground(Void... voids) {
-            SystemClock.sleep(5000);
+            //SystemClock.sleep(5000);
             return FeedItemProvider.getItems();
         }
     }
